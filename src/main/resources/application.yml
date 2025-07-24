@@ -1,19 +1,15 @@
-server:
-  port: 9192
-
 spring:
   kafka:
-    bootstrap-servers: localhost:9092
     consumer:
-      group-id: kafka-consumer-grp-4json
+      bootstrap-servers: localhost:9092
+      group-id: pugal-con-group
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
         spring:
           json:
             trusted:
-              - com.javaproject2.dto
-            value:
-              default:
-                type: com.javaproject2.dto.Customer
-        spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
+              packages : com.javaproject2.dto
+
+server:
+  port: 9292

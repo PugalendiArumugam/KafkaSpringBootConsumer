@@ -1,7 +1,7 @@
 package com.KafkaSpringBootConsumer.consumer;
 
 
-import com.KafkaSpringBootConsumer.dto.Customer;
+import com.javaproject2.dto.Customer;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
@@ -11,9 +11,9 @@ import org.slf4j.Logger;
 public class KafkaMessageListener {
     Logger log = LoggerFactory.getLogger(KafkaMessageListener.class);
 
-    @KafkaListener(topics = "kafka-json-topics2", groupId = "kafka-consumer-grp-4json")
-    public void consumer(Customer customer) {
-        log.info("consumer receiving messages {}", customer);
+    @KafkaListener(topics = "kafka-json-topics2", groupId = "kafka-consumer-grp-json")
+    public void consumerEvents(Customer customer) {
+        log.info("consumer receiving events {} ", customer.toString());
     }
 
 //    @KafkaListener(topics = "kafka-con-prod-topics", groupId = "kafka-consumer-grp2")

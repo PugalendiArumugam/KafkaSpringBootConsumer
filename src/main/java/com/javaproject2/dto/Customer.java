@@ -1,10 +1,13 @@
-package com.KafkaSpringBootConsumer.dto;
+package com.javaproject2.dto;
 
 import lombok.Data;
 
 @Data
 public class Customer {
     private int id;
+    private String name;
+    private String email;
+    private String contactNo;
 
     @Override
     public String toString() {
@@ -15,11 +18,6 @@ public class Customer {
                 ", contactNo='" + contactNo + '\'' +
                 '}';
     }
-
-    private String name;
-    private String email;
-    private String contactNo;
-
 
     public String getContactNo() {
         return contactNo;
